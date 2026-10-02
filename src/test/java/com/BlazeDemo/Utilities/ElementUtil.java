@@ -1,0 +1,142 @@
+package com.BlazeDemo.Utilities;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class ElementUtil {
+	
+	public static void getScreenshot(WebDriver driver, String filename) {
+		
+		 TakesScreenshot ts=(TakesScreenshot)driver;
+		 File temp= ts.getScreenshotAs(OutputType.FILE);
+		 File dest=new File(System.getProperty("user.dir")+"//ScreenshotsFolder//"+filename+".png");
+		 
+		 try {
+			FileHandler.copy(temp,dest);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		}
+	
+	
+	
+		    //javascript utilities for sroll
+
+	   public static void scrollDown(WebDriver driver)
+	   {
+		   JavascriptExecutor js = ( JavascriptExecutor) driver; 
+		   js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
+	   }
+
+	   public static void scrollUp(WebDriver driver)
+	   {
+		   JavascriptExecutor js = ( JavascriptExecutor) driver; 
+		   js.executeScript("window.scrollTo(document.body.scrollHeight,0)");
+	   }
+
+	   public static void scrolluptoElement(WebDriver driver,WebElement ele)
+	   {
+		   JavascriptExecutor js = ( JavascriptExecutor) driver; 
+		   js.executeScript("arguments[0].scrollIntoView(true);",ele);
+			  
+	   }
+	 
+	   public static void elementclick(WebDriver driver,WebElement ele) {
+	   JavascriptExecutor js = (JavascriptExecutor) driver;
+	   js.executeScript("arguments[0].click();", ele);
+	   }
+	   
+	  //switch to parentid 
+	 public static void switchToParentWindow(WebDriver driver, String parentId) {
+		 driver.switchTo().window(parentId);
+	 }
+
+
+	//multiple windowHandling
+		
+		public static void switchToExpectedWindow(WebDriver driver,List<String> allWindows,String windowTitle)
+		{
+			for(String childId:allWindows)
+			  {
+				  //we are switching to every window and collecting title
+				  String appTitle=driver.switchTo().window(childId).getTitle();
+				  if(appTitle.contains(windowTitle))
+				  {
+					  System.out.println("Expected Window found");
+					  System.out.println("Current url: "+driver.getCurrentUrl());
+					  break;
+				  }
+			  }
+			
+		}
+
+		//ExplicitWait utility
+			public static WebElement waitForVisibilityOfElement(WebDriver driver,By loc,int timeout)
+			{
+				WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+				return wait.until(ExpectedConditions.visibilityOfElementLocated(loc));
+			}
+			
+			public static WebElement waitForPresenceOfElement(WebDriver driver,By loc,int timeout)
+			{
+				WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+				return wait.until(ExpectedConditions.presenceOfElementLocated(loc));
+			}
+			
+			public static WebElement waitForElementClickable(WebDriver driver,By loc,int timeout)
+			{
+				WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+				return wait.until(ExpectedConditions.elementToBeClickable(loc));
+				
+			}
+			
+			public static boolean waitForUrlContains(WebDriver driver,String url,int timeout)
+			{
+				WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+				return wait.until(ExpectedConditions.urlContains(url));
+			}
+			
+			
+			public static boolean waitForTitleContains(WebDriver driver,String title,int timeout)
+			{
+				WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(timeout));
+				return wait.until(ExpectedConditions.titleContains(title));
+			
+			}
+	 
+	   
+	   
+	   
+	   
+	   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
