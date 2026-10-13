@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+
+  <test thread-count="5" name="Test1">
+  <parameter name="bname" value="chrome"></parameter>
+  <parameter name="data" value="java"></parameter>
+    <classes>
+      <class name="com.WebTestingTestNGDataReading.Tc072_CrossBrowserTesting"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test thread-count="5" name="Test2">
+  <parameter name="bname" value="msedge"></parameter>
+  <parameter name="data" value="testNG"></parameter>
+    <classes>
+      <class name="com.WebTestingTestNGDataReading.Tc072_CrossBrowserTesting"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  
+  <test thread-count="5" name="Test3">
+  <parameter name="bname" value="firefox"></parameter>
+  <parameter name="data" value="cucumber"></parameter>
+    <classes>
+      <class name="com.WebTestingTestNGDataReading.Tc072_CrossBrowserTesting"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</suite> <!-- Suite -->

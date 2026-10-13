@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-10-13T13:34:44 IST" name="Docker Grid Suite" finished-at="2026-10-13T13:35:12 IST" duration-ms="28037">
+    <groups>
+    </groups>
+    <test started-at="2026-10-13T13:34:44 IST" name="Test1" finished-at="2026-10-13T13:35:07 IST" duration-ms="22299">
+      <class name="assignmentselenium.amazonAssignment">
+        <test-method signature="getProduct(java.lang.String)[pri:0, instance:assignmentselenium.amazonAssignment@2d3379b4]" started-at="2026-10-13T13:34:44 IST" name="getProduct" finished-at="2026-10-13T13:35:07 IST" duration-ms="22221" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getProduct -->
+      </class> <!-- assignmentselenium.amazonAssignment -->
+    </test> <!-- Test1 -->
+    <test started-at="2026-10-13T13:34:44 IST" name="Test3" finished-at="2026-10-13T13:35:10 IST" duration-ms="25505">
+      <class name="assignmentselenium.amazonAssignment">
+        <test-method signature="getProduct(java.lang.String)[pri:0, instance:assignmentselenium.amazonAssignment@2925bf5b]" started-at="2026-10-13T13:34:44 IST" name="getProduct" finished-at="2026-10-13T13:35:10 IST" duration-ms="25446" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[edge]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getProduct -->
+      </class> <!-- assignmentselenium.amazonAssignment -->
+    </test> <!-- Test3 -->
+    <test started-at="2026-10-13T13:34:44 IST" name="Test2" finished-at="2026-10-13T13:35:12 IST" duration-ms="28037">
+      <class name="assignmentselenium.amazonAssignment">
+        <test-method signature="getProduct(java.lang.String)[pri:0, instance:assignmentselenium.amazonAssignment@b3ca52e]" started-at="2026-10-13T13:34:44 IST" name="getProduct" finished-at="2026-10-13T13:35:12 IST" duration-ms="27974" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getProduct -->
+      </class> <!-- assignmentselenium.amazonAssignment -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Docker Grid Suite -->
+</testng-results>
